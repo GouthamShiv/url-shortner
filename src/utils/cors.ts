@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import log from './logger';
 
 export default function setCORS(req: Request, res: Response, next: NextFunction) {
-  const allowedOrigins = config.get<string>('app.HOST').split(';');
+  const allowedOrigins = config.get<string>('app.CORS').split(';');
 
   log.debug(`:: CORS config :: Allowed origins => ${allowedOrigins}`);
 
