@@ -6,7 +6,7 @@ import log from './utils/logger';
 import dbConnection from './utils/db';
 import urlRouter from './routes/url.routes';
 import index from './routes/index';
-// import cors from './utils/cors';
+import cors from './utils/cors';
 
 const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
@@ -15,7 +15,7 @@ const limiter = rateLimit({
 
 const server = express().disable('x-powered-by');
 server.use(json());
-// server.use(cors);
+server.use(cors);
 server.use(limiter);
 server.use(helmet());
 

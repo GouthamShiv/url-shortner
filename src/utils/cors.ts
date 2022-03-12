@@ -15,6 +15,9 @@ export default function setCORS(req: Request, res: Response, next: NextFunction)
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     log.info(`:: CORS config :: Successfully set CORS headers, allowing origin ${currentOrigin}`);
   } else {
+    res.setHeader('Access-Control-Allow-Origin', allowedOrigins[0]);
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     log.error(`:: CORS config :: Origin is not set or not allowed! => ${currentOrigin}`);
   }
 
