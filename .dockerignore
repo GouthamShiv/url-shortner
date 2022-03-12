@@ -1,3 +1,5 @@
+.dockerignore
+
 # Logs
 logs
 *.log
